@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
-GOOGLE_API_KEY='AIzaSyD04Ap2sE9Dx4LPGiP1y5ldqZNIfgaT-DY'
+GOOGLE_API_KEY='YOUR_API_KEY'
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = "models/text-bison-001"
