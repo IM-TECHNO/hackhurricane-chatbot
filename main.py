@@ -16,9 +16,10 @@ def index():
 def chat():
     question = request.json['question']
     model = genai.GenerativeModel('gemini-pro')
+    chat = model.start_chat(history=[])
     prompt = f'''Answer this question shortly and be precise. DO NOT ANSWER IF IT INVOLVES NSFW CONTENT. Here is your question : {question}.
     '''
-    reply = model.generate_content(prompt)
+    reply = chat.send_message(question)
 
     return jsonify({'response': reply.text})
 
